@@ -1,0 +1,29 @@
+/*
+COMANDO:
+
+A fórmula para calcular a área de uma circunferência é: area = π . raio2. 
+Considerando para este problema que π = 3.14159
+
+- Efetue o cálculo da área, elevando o valor de raio ao quadrado e multiplicando por π.
+
+Entrada
+A entrada contém um valor de ponto flutuante (dupla precisão), no caso, a variável raio.
+
+Saída
+Apresentar a mensagem "A=" seguido pelo valor da variável area, conforme exemplo abaixo, com 4 casas após o ponto decimal. 
+Utilize variáveis de dupla precisão (double).
+
+Como todos os problemas, não esqueça de imprimir o fim de linha após o resultado, 
+caso contrário, você receberá "Presentation Error".
+*/
+
+var input = require('fs').readFileSync('stdin', 'utf8');
+var entradas = input.split ('\n');
+
+var raio = parseFloat (entradas.shift());
+var PI = 3.14159;
+// A função Math.pow recebe entre os parâmetros a base (raio) e após a vírgula o expoente da potenciação
+var area = PI * (Math.pow(raio,2));
+
+// O parâmetro entre () após .toFixed define o número de casas decimais de um número, conforme pedido pelo problema, 4 casas decimais
+console.log ('A=' + area.toFixed(4));
